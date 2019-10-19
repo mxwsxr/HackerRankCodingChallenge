@@ -4,6 +4,11 @@ public class Day1Solution
 {
     private static void Main(String[] args)
     {
+        ManipulateDataTypes();
+    }
+
+    private static void ManipulateDataTypes()
+    {
         int i = 4;
         double d = 4.0;
         string s = "HackerRank ";

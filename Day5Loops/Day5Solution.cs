@@ -6,6 +6,11 @@ namespace Day5Loops
     {
         private static void Main(string[] args)
         {
+            CalculateLoopItems();
+        }
+
+        private static void CalculateLoopItems()
+        {
             int n = Convert.ToInt32(Console.ReadLine());
 
             for (int i = 1; i <= 10; i++)

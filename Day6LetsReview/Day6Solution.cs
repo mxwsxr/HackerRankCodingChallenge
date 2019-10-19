@@ -8,6 +8,11 @@ namespace Day6LetsReview
     {
         private static void Main(string[] args)
         {
+            CheckEvenOddIndexedChars();
+        }
+
+        private static void CheckEvenOddIndexedChars()
+        {
             int N = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < N; i++)
