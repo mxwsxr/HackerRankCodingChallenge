@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System;
 
-public class Day3ConditionalStatements
+public class Day3Solution
 {
     static void Main(string[] args)
     {

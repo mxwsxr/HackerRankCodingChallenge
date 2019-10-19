@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Day2Operators
+public class Day2Solution
 {
 
     // Complete the solve function below.

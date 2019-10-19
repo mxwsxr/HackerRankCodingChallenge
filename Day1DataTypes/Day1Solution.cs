@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Day1DataTypes
+public class Day1Solution
 {
     static void Main(String[] args)
     {
