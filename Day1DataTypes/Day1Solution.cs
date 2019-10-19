@@ -2,7 +2,7 @@
 
 public class Day1Solution
 {
-    static void Main(String[] args)
+    private static void Main(String[] args)
     {
         int i = 4;
         double d = 4.0;
