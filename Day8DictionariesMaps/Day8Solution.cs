@@ -24,7 +24,8 @@ namespace Day8DictionariesMaps
                 }
                 else
                 {
-                    Console.WriteLine("Please provide a phone number with a valid digit length of 8!");
+                    Console.WriteLine("This is not a 8 digit phone number!");
+                    return;
                 }
             }
 
