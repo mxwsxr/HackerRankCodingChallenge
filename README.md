@@ -1,6 +1,6 @@
 # HackerRankCodingChallenge
 
-This is my repository for all HackerRank 30 Days of Coding Challenge Collections.
+This is my repository for all 30 Days of Code Challenges from HackerRank.
 
 I will use C# as my goto programming language to solve every challenge/exercise given by the HackerRank Challenges.
 
