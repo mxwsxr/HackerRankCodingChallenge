@@ -4,19 +4,25 @@ using System.IO;
 
 namespace Day8DictionariesMaps
 {
-    internal class Day8Solution
+    public class Day8Solution
     {
         private static void Main(string[] args)
         {
+            var consoleIO = new ConsoleImpl();
+            Execute(consoleIO);
+        }
+
+        public static void Execute(ICommInterface commInterface)
+        {
             // Specifies the amount of entries you want to have in the telephonebook.
-            int telephoneBookEntryAmount = Convert.ToInt32(Console.ReadLine());
+            int telephoneBookEntryAmount = Convert.ToInt32(commInterface.ReadLine());
 
             Dictionary<string, int> TelephoneBook = new Dictionary<string, int>(telephoneBookEntryAmount);
 
             // Iterate through the entry amount and describe each entry in the form of 2 space-separated values on a single line.
             for (int i = 0; i < telephoneBookEntryAmount; i++)
             {
-                string[] telephoneBookEntry = Console.ReadLine().Split(" ");
+                string[] telephoneBookEntry = commInterface.ReadLine().Split(" ");
                 int digitLength = 8;
                 if (telephoneBookEntry[1].Length == digitLength)
                 {
@@ -24,7 +30,7 @@ namespace Day8DictionariesMaps
                 }
                 else
                 {
-                    Console.WriteLine("This is not a 8 digit phone number!");
+                    commInterface.WriteLine("This is not a 8 digit phone number!");
                     return;
                 }
             }
@@ -33,15 +39,15 @@ namespace Day8DictionariesMaps
             // If found then print the query as name=phonenumber.
             for (int i = 0; i < telephoneBookEntryAmount; i++)
             {
-                string entrySearch = Console.ReadLine();
+                string entrySearch = commInterface.ReadLine();
 
                 if (TelephoneBook.ContainsKey(entrySearch) && entrySearch.Length != 0)
                 {
-                    Console.WriteLine($"{entrySearch}={TelephoneBook[entrySearch]}");
+                    commInterface.WriteLine($"{entrySearch}={TelephoneBook[entrySearch]}");
                 }
                 else
                 {
-                    Console.WriteLine("Not found!");
+                    commInterface.WriteLine("Not found!");
                 }
             }
         }
