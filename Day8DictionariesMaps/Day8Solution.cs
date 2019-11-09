@@ -22,7 +22,7 @@ namespace Day8DictionariesMaps
             // Iterate through the entry amount and describe each entry in the form of 2 space-separated values on a single line.
             for (int i = 0; i < telephoneBookEntryAmount; i++)
             {
-                string[] telephoneBookEntry = commInterface.ReadLine().Split(' ');
+                string[] telephoneBookEntry = commInterface.ReadLine().Split(" ");
                 int digitLength = 8;
                 if (telephoneBookEntry[1].Length == digitLength)
                 {
@@ -37,24 +37,17 @@ namespace Day8DictionariesMaps
 
             // Iterate through the entry amount and search for any key in the dictionary.
             // If found then print the query as name=phonenumber.
-            while (true)
+            for (int i = 0; i < telephoneBookEntryAmount; i++)
             {
                 string entrySearch = commInterface.ReadLine();
 
-                if (!string.IsNullOrWhiteSpace(entrySearch))
+                if (TelephoneBook.ContainsKey(entrySearch) && entrySearch.Length != 0)
                 {
-                    if (TelephoneBook.ContainsKey(entrySearch) && entrySearch.Length != 0)
-                    {
-                        commInterface.WriteLine($"{entrySearch}={TelephoneBook[entrySearch]}");
-                    }
-                    else
-                    {
-                        commInterface.WriteLine("Not found");
-                    }
+                    commInterface.WriteLine($"{entrySearch}={TelephoneBook[entrySearch]}");
                 }
                 else
                 {
-                    break;
+                    commInterface.WriteLine("Not found!");
                 }
             }
         }
