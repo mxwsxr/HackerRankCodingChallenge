@@ -37,17 +37,24 @@ namespace Day8DictionariesMaps
 
             // Iterate through the entry amount and search for any key in the dictionary.
             // If found then print the query as name=phonenumber.
-            for (int i = 0; i < telephoneBookEntryAmount; i++)
+            while (true)
             {
                 string entrySearch = commInterface.ReadLine();
 
-                if (TelephoneBook.ContainsKey(entrySearch) && entrySearch.Length != 0)
+                if (!string.IsNullOrWhiteSpace(entrySearch))
                 {
-                    commInterface.WriteLine($"{entrySearch}={TelephoneBook[entrySearch]}");
+                    if (TelephoneBook.ContainsKey(entrySearch) && entrySearch.Length != 0)
+                    {
+                        commInterface.WriteLine($"{entrySearch}={TelephoneBook[entrySearch]}");
+                    }
+                    else
+                    {
+                        commInterface.WriteLine("Not found");
+                    }
                 }
                 else
                 {
-                    commInterface.WriteLine("Not found");
+                    break;
                 }
             }
         }
