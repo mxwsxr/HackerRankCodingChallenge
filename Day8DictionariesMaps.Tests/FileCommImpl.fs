@@ -16,10 +16,13 @@ type FileImpl(input,results) =
     member this.Close () = this.Results.Close()
 
     interface Day8DictionariesMaps.ICommInterface with
-        member this.ReadLine(): string = 
-            let res = this.Input.[this.index]
-            this.index <- this.index + 1
-            res
+        member this.ReadLine(): string =
+            if this.index < this.Input.Length then
+                let res = this.Input.[this.index]
+                this.index <- this.index + 1
+                res
+            else
+                ""
 
         member this.WriteLine(value: string): unit = 
             this.Results.WriteLine(value)
